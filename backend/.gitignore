@@ -1,0 +1,11 @@
+.env
+.venv
+*/__pycache__
+*/*/__pycache__
+*/*/*/__pycache__
+media
+static
+celerybeat*.*
+.coverage
+htmlcov
+cobertura.xml
