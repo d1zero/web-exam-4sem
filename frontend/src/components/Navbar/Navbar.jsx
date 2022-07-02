@@ -12,6 +12,7 @@ import {
     MenuItem,
     Button,
 } from "@mui/material";
+import {Link} from 'react-router-dom'
 import AdbIcon from "@mui/icons-material/Adb";
 import { MobileMenu } from "./MobileMenu/MobileMenu";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -49,6 +50,8 @@ const Navbar = () => {
                         {ROUTES.map((route) => (
                             <Button
                                 key={route.link}
+                                component={Link}
+                                to={route.link}
                                 onClick={() => {
                                     setAnchorElNav(null);
                                 }}
@@ -70,7 +73,7 @@ const Navbar = () => {
                                     alt="Remy Sharp"
                                     src="/static/images/avatar/2.jpg"
                                 /> */}
-                                <AccountCircleIcon />
+                                <AccountCircleIcon fontSize="large" color="primary" style={{'color': "#fff"}}/>
                             </IconButton>
                         </Tooltip>
                         <Menu
