@@ -12,7 +12,7 @@ from tracks.views import ToggleFavoriteTrackViewSet, TrackViewSet
 from .views import schema_view
 
 
-router = routers.SimpleRouter()
+router = routers.DefaultRouter()
 router.register('auth', UserViewSet)
 router.register('albums/toggle-favorite', ToggleFavoriteAlbumViewSet, basename='albums-userfavorite')
 router.register('albums', AlbumViewSet)
