@@ -2,17 +2,31 @@ import React from "react";
 import RestoreIcon from "@mui/icons-material/Restore";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { BottomNavigation, BottomNavigationAction, Paper, Typography } from "@mui/material";
+import {BottomNavigation, BottomNavigationAction, Paper, Typography, Box, Container} from "@mui/material";
 
 const Footer = () => {
     const [value, setValue] = React.useState(0);
 
     return (
-        <Paper
-            sx={{ position: "fixed", bottom: 0, left: 0, right: 0, boxShadow: 'none', textAlign: 'center' }}
+
+
+        <Box
+            component="footer"
+            sx={{
+                py: 3,
+                px: 2,
+                mt: 'auto',
+            }}
         >
-            <Typography variant="h6">Тимофеев Александр. Группа 201-321</Typography>
-        </Paper>
+            <Container maxWidth="sm">
+                <Typography variant="h6" style={{
+                    marginTop: '50px', boxShadow: 'none',
+                    textAlign: 'center',
+                }}>
+                    Тимофеев Александр. Группа 201-321
+                </Typography>
+            </Container>
+        </Box>
     );
 };
 

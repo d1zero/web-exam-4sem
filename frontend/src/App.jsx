@@ -1,40 +1,54 @@
-import { Routes, Route } from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
-import { AlbumsDetailPage, AlbumsListPage} from "./pages/AlbumsPages";
-import { ArtistsDetailPage, ArtistsListPage } from "./pages/ArtistsPages";
-import { GenresDetailPage, GenresListPage } from "./pages/GenresPages";
+import {AlbumsDetailPage, AlbumsListPage} from "./pages/AlbumsPages";
+import {ArtistsDetailPage, ArtistsListPage} from "./pages/ArtistsPages";
+import {GenresDetailPage, GenresListPage} from "./pages/GenresPages";
 import HomePage from "./pages/HomePages/HomePage";
-import { PlaylistsDetailPage, PlaylistsListPage } from "./pages/PlaylistsPages";
-import { TracksDetailPage, TracksListPage } from "./pages/TracksPages";
+import {PlaylistsDetailPage, PlaylistsListPage} from "./pages/PlaylistsPages";
+import {TracksDetailPage, TracksListPage} from "./pages/TracksPages";
+import {Box} from "@mui/material";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 function App() {
     return (
-        <div className="App">
-            <Navbar />
+        <Box
+            sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: '100vh',
+            }}>
+            <Navbar/>
             <Routes>
-                <Route path="/" end element={<HomePage />} />
-                <Route path="/albums" element={<AlbumsListPage />}>
-                    <Route path=":albumId" element={<AlbumsDetailPage />} />
-                </Route>
-                <Route path="/artists" element={<ArtistsListPage />}>
-                    <Route path=":artistId" element={<ArtistsDetailPage />} />
-                </Route>
-                <Route path="/genres" element={<GenresListPage />}>
-                    <Route path=":genreId" element={<GenresDetailPage />} />
-                </Route>
-                <Route path="/playlists" element={<PlaylistsListPage />}>
-                    <Route
-                        path=":playlistId"
-                        element={<PlaylistsDetailPage />}
-                    />
-                </Route>
-                <Route path="/tracks" element={<TracksListPage />}>
-                    <Route path=":trackId" element={<TracksDetailPage />} />
-                </Route>
+                <Route path="/" element={<HomePage/>}/>
+
+                <Route path="/albums/:albumId" element={<AlbumsDetailPage/>}/>
+                <Route path="/albums" end element={<AlbumsListPage/>}/>
+
+                <Route path="/artists/:artistId" element={<ArtistsDetailPage/>}/>
+                <Route path="/artists" element={<ArtistsListPage/>}/>
+
+                <Route path="/genres/:genreId" element={<GenresDetailPage/>}/>
+                <Route path="/genres" element={<GenresListPage/>}/>
+
+                <Route
+                    path="/playlists/:playlistId"
+                    element={<PlaylistsDetailPage/>}
+                />
+                <Route path="/playlists" element={<PlaylistsListPage/>}/>
+
+                <Route path="/tracks/:trackId" element={<TracksDetailPage/>}/>
+                <Route path="/tracks" element={<TracksListPage/>}/>
+
+                <Route path="/login" element={<LoginPage/>}/>
+                <Route path="/register" element={<RegisterPage/>}/>
+
+                <Route path="/profile" element={<ProfilePage/>}/>
             </Routes>
-            <Footer />
-        </div>
+            <Footer/>
+        </Box>
     );
 }
 

@@ -1,10 +1,10 @@
 import React from 'react'
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 
 const HomePage = () => {
     return (
         <Container>
-            HomePage
+            <Typography variant="h1" textAlign="center">Главная страница</Typography>
         </Container>
     )
 }
